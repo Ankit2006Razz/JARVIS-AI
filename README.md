@@ -1,5 +1,8 @@
 # Jarvis AI Assistant - Complete Project
 
+<img width="1366" height="768" alt="screenshot" src="https://github.com/user-attachments/assets/0d365d38-6cbf-4810-8736-52c61f94db56" />
+
+
 A fully functional AI assistant with 60+ system commands and 30+ quick actions. Built with Flask backend and modern HTML/CSS/JS frontend.
 
 ## Features
