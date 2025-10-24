@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis AI Assistant - 100% FREE</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- Header with Logo and Status -->
+            <div class="sidebar-header">
+                <div class="logo-section">
+                    <div class="logo">
+                        <span class="logo-icon">🤖</span>
+                        <span class="logo-text">Jarvis AI</span>
+                    </div>
+                    <div class="status-indicator">
+                        <span class="status-dot"></span>
+                        <span class="status-text">Ready</span>
+                    </div>
+                </div>
+                <div class="model-info">
+                    <span class="model-label">Current Model:</span>
+                    <span class="model-badge">Gemini FREE</span>
+                </div>
+            </div>
+
+            <!-- AI Model Selection -->
+            <div class="settings-section">
+                <h3 class="section-title">🤖 AI Model</h3>
+                <label class="model-label-text">Choose AI Model:</label>
+                <select id="aiModelSelect" class="input-select">
+                    <option value="gemini">🤖 Gemini (FREE - gemini-1.5-flash)</option>
+                    <option value="gpt">🧠 GPT-4 (FREE - via API)</option>
+                    <option value="claude">🎯 Claude (FREE - via API)</option>
+                </select>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="settings-section">
+                <h3 class="section-title">⚡ Quick Actions</h3>
+                <div id="quickActionsList" class="quick-actions-list">
+                    <!-- Quick actions will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <!-- Voice Settings (Collapsible) -->
+            <div class="settings-section collapsible">
+                <h3 class="section-title" onclick="toggleSection(this)">🎤 Voice Settings</h3>
+                <div class="section-content">
+                    <div class="setting-group">
+                        <label>Voice:</label>
+                        <select id="voiceSelect" class="input-select">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Speech Rate: <span id="rateValue">1.2x</span></label>
+                        <input type="range" id="speechRate" min="0.5" max="2" step="0.1" value="1.2" class="slider">
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Volume: <span id="volumeValue">70%</span></label>
+                        <input type="range" id="volume" min="0" max="100" step="10" value="70" class="slider">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="wakeWord" checked>
+                        <label for="wakeWord">Wake Word Enabled</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="voiceResponse" checked>
+                        <label for="voiceResponse">Voice Response</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- To-Do / Notes -->
+            <div class="settings-section collapsible">
+                <h3 class="section-title" onclick="toggleSection(this)">📝 To-Do / Notes</h3>
+                <div class="section-content">
+                    <div class="notes-input-group">
+                        <input type="text" id="noteInput" placeholder="Add task or note..." class="note-input">
+                        <div class="note-buttons">
+                            <button id="addNoteBtn" class="btn-icon" title="Add Note">➕</button>
+                            <button id="voiceNoteBtn" class="btn-icon" title="Voice Note">🎙️</button>
+                        </div>
+                    </div>
+                    <div id="notesList" class="notes-list"></div>
+                    <button id="saveNotesBtn" class="btn-primary">💾 Save Notes</button>
+                    <button id="clearNotesBtn" class="btn-danger">❌ Clear All</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-content">
+            <!-- Chat Messages -->
+            <div id="chatContainer" class="chat-container">
+                <div class="message jarvis-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Hello! I'm Jarvis 2.0, your AI assistant using 100% FREE models only. I support voice commands, system actions, and task management. Try saying "Hey Jarvis" or use the quick actions panel. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <input type="text" id="userInput" placeholder="Message Jarvis... (100% FREE AI models only)" class="message-input">
+                <div class="input-buttons">
+                    <button id="voiceInputBtn" class="btn-icon-large" title="Voice Input">🎤</button>
+                    <button id="clearChatBtn" class="btn-icon-large" title="Clear Chat">🗑️</button>
+                    <button id="sendBtn" class="btn-send">📤</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
